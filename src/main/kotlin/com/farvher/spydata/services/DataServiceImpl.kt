@@ -8,7 +8,6 @@ import java.util.ArrayList
 
 @Service
 class DataServiceImpl(val dataRepository: DataRepository) : DataService {
-	
 
 	companion object {
 		const val REGEX_EMAIL = "\\b[\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4}\\b";
@@ -22,6 +21,10 @@ class DataServiceImpl(val dataRepository: DataRepository) : DataService {
 
 	override fun deleteAll() {
 		dataRepository.deleteAll()
+	}
+	
+	override fun deleteById(id: Long) {
+		dataRepository.deleteById(id);
 	}
 
 	override fun findAll(): List<Data> {

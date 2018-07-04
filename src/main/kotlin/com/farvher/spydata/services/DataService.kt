@@ -12,6 +12,8 @@ interface DataService {
 	
 	fun deleteByComputer(computer : String) : Unit
 	
+	fun deleteById(id: Long) : Unit
+	
 	fun findByMatchEmail() :  List<Data>
 	
 	fun findByContains(contains : String) : List<Data>

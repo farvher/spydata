@@ -47,10 +47,18 @@ class DataController(val dataService : DataService) {
 		return "index"
 	}
 	
-	@GetMapping("/delete/{computer}")
-	fun deleteAll(@PathVariable computer : String) : String {
-		dataService.deleteByComputer(computer)
-		return "index"
+	@GetMapping("/delete/{id}")
+	@ResponseBody
+	fun deleteById(@PathVariable id : Long) : String {
+		dataService.deleteById(id);
+		return "deleted "+id
+	}
+	
+	@GetMapping("/delete-computer/{computer}")
+	@ResponseBody
+	fun deleteByComputer(@PathVariable computer : String) : String {
+		dataService.deleteByComputer(computer);
+		return "deleted "+computer
 	}
 	
 	@PostMapping("/contains")
@@ -64,6 +72,7 @@ class DataController(val dataService : DataService) {
 		model.addAttribute("data",dataService.findByMatchNumber())
 		return "index"	
 	}
+	
 	@GetMapping("/regexEmail")
 	fun findRegexEmail(model : Model) : String{
 		model.addAttribute("data",dataService.findByMatchEmail())
