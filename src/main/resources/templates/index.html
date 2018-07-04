@@ -39,12 +39,12 @@
 		</ul>
 		<form class="form-inline my-2 my-lg-0" method="post"
 			action="/contains">
-			<input class="form-control mr-sm-2" type="search" name="contains"
+			<input class="form-control mr-sm-2" type="search" name="contains" required="required"
 				placeholder="Contains">
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 		</form>
 		<form class="form-inline my-2 my-lg-0" method="post" action="/find">
-			<input class="form-control mr-sm-2" type="search" name="computer"
+			<input class="form-control mr-sm-2" type="search" name="computer" required="required"
 				placeholder="Computer">
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 		</form>
@@ -54,12 +54,12 @@
 <form class="form-inline" method="post" action="/save">
 	<div class="form-group mb-2">
 		<label for="staticEmail2" class="sr-only">Computer</label> <input
-			type="text" class="form-control" id="staticEmail2"
+			type="text" class="form-control" id="staticEmail2" required="required"
 			placeholder="computer" name="computer">
 	</div>
 	<div class="form-group mx-sm-3 mb-2">
 		<label for="inputPassword2" class="sr-only">Password</label> <input
-			type="text" class="form-control" id="inputPassword2" name="message"
+			type="text" class="form-control" id="inputPassword2" name="message" required="required"
 			placeholder="message">
 	</div>
 	<button type="submit" class="btn btn-primary mb-2">Save</button>
