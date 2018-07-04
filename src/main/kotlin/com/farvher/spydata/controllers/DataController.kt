@@ -24,9 +24,13 @@ class DataController(val dataService : DataService) {
 		return "saved"
 	}
 	
-	
 	@GetMapping("/")
-	fun home(model : Model) : String  {
+	fun home() : String  {
+		return "index"
+	}
+	
+	@GetMapping("/data")
+	fun data(model : Model) : String  {
 		model.addAttribute("data",dataService.findAll())
 		return "index"
 	}
