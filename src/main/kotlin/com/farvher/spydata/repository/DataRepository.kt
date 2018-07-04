@@ -17,6 +17,6 @@ interface DataRepository  : CrudRepository<Data, Long>{
 	
 	fun findByCharactersContaining(characters : String) : Optional<List<Data>>
 	
-	@Query(nativeQuery=true, value="SELECT * FROM spydata WHERE characters ~ ?1 ")
+	@Query(nativeQuery=true, value="SELECT * FROM spydata WHERE characters ~* ?1 ")
 	fun findByCharactersMatchesRegex(regex : String) : Optional<List<Data>>
 }

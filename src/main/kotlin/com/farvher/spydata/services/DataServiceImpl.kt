@@ -10,7 +10,7 @@ import java.util.ArrayList
 class DataServiceImpl(val dataRepository: DataRepository) : DataService {
 
 	companion object {
-		const val REGEX_EMAIL = "\\b[\\w\\.-]+@[\\w\\.-]+\\.\\w{2,4}\\b";
+		const val REGEX_EMAIL = "^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$";
 		const val REGEX_NUMBER = "(\\+?( |-|\\.)?\\d{1,2}( |-|\\.)?)?(\\(?\\d{3}\\)?|\\d{3})( |-|\\.)?(\\d{3}( |-|\\.)?\\d{4})";
 	}
 	
