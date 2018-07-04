@@ -4,6 +4,7 @@ import com.farvher.spydata.entity.Data
 import org.springframework.beans.factory.annotation.Autowired
 import com.farvher.spydata.repository.DataRepository
 import org.springframework.stereotype.Service
+import java.util.ArrayList
 
 @Service
 class DataServiceImpl(val dataRepository: DataRepository) : DataService {
@@ -28,7 +29,7 @@ class DataServiceImpl(val dataRepository: DataRepository) : DataService {
 	}
 
 	override fun findByComputer(computer: String): List<Data> {
-		return dataRepository.findByComputer(computer).orEmpty()
+		return dataRepository.findByComputer(computer).orElse(ArrayList<Data>())
 	}
 
 	override fun deleteByComputer(computer: String) {
@@ -36,15 +37,15 @@ class DataServiceImpl(val dataRepository: DataRepository) : DataService {
 	}
 	
 	override fun findByMatchEmail(): List<Data> {
-		return dataRepository.findByCharactersMatchesRegex(REGEX_EMAIL).orEmpty();
+		return dataRepository.findByCharactersMatchesRegex(REGEX_EMAIL).orElse(ArrayList<Data>())
 	}
 
 
 	override fun findByContains(contains: String): List<Data> {
-		return dataRepository.findByCharactersContaining(contains).orEmpty()
+		return dataRepository.findByCharactersContaining(contains).orElse(ArrayList<Data>())
 	}
 
 	override fun findByMatchNumber(): List<Data> {
-		return dataRepository.findByCharactersMatchesRegex(REGEX_NUMBER).orEmpty();
+		return dataRepository.findByCharactersMatchesRegex(REGEX_NUMBER).orElse(ArrayList<Data>())
 	}
 }
