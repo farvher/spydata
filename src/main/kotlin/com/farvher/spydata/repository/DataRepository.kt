@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query
 
 
 @Repository
-interface DataRepository  : JpaRepository<Data, Long>{
+interface DataRepository  : CrudRepository<Data, Long>{
 	
 	fun findByComputer(computer : String) : List<Data>
 	

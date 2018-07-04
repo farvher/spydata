@@ -24,11 +24,11 @@ class DataServiceImpl(val dataRepository: DataRepository) : DataService {
 	}
 
 	override fun findAll(): List<Data> {
-		return dataRepository.findAll()
+		return dataRepository.findAll().toList().orEmpty()
 	}
 
 	override fun findByComputer(computer: String): List<Data> {
-		return dataRepository.findByComputer(computer)
+		return dataRepository.findByComputer(computer).orEmpty()
 	}
 
 	override fun deleteByComputer(computer: String) {
@@ -36,15 +36,15 @@ class DataServiceImpl(val dataRepository: DataRepository) : DataService {
 	}
 	
 	override fun findByMatchEmail(): List<Data> {
-		return dataRepository.findByCharactersMatchesRegex(REGEX_EMAIL);
+		return dataRepository.findByCharactersMatchesRegex(REGEX_EMAIL).orEmpty();
 	}
 
 
 	override fun findByContains(contains: String): List<Data> {
-		return dataRepository.findByCharactersContaining(contains)
+		return dataRepository.findByCharactersContaining(contains).orEmpty()
 	}
 
 	override fun findByMatchNumber(): List<Data> {
-		return dataRepository.findByCharactersMatchesRegex(REGEX_NUMBER);
+		return dataRepository.findByCharactersMatchesRegex(REGEX_NUMBER).orEmpty();
 	}
 }
