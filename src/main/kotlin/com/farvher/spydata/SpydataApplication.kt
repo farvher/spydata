@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class SpydataApplication
+open class SpydataApplication
 
 fun main(args: Array<String>) {
     runApplication<SpydataApplication>(*args)
