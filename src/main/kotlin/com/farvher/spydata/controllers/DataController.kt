@@ -29,6 +29,14 @@ class DataController(val dataService : DataService) {
 		return "index"
 	}
 	
+	@GetMapping("/rest")
+	@ResponseBody
+	fun rest() : List<Data> {
+		
+		return dataService.findAll();
+		 
+	}
+	
 	@GetMapping("/data")
 	fun data(model : Model) : String  {
 		model.addAttribute("data",dataService.findAll())
