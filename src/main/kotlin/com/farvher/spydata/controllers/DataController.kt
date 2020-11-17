@@ -21,6 +21,13 @@ class DataController(val dataService : DataService) {
 		dataService.save(Data(LocalDate.now() ,dataDto.computer ,dataDto.message ))
 		return "saved"
 	}
+
+	@PostMapping("/save2")
+	@ResponseBody
+	fun saveData2(@RequestParam computer: String , @RequestParam message: String ) : String{
+		dataService.save(Data(LocalDate.now() ,computer ,message ))
+		return "saved"
+	}
 	
 	@GetMapping("/")
 	fun home() : String  {
