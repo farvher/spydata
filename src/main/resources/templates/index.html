@@ -26,9 +26,11 @@
 
 	<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li class="nav-item active"><a class="nav-link" href="/data">data
+			<li class="nav-item active"><a class="nav-link" href="/data">raw
 					<span class="sr-only">(current)</span>
 			</a></li>
+			<li class="nav-item"><a class="nav-link" href="/clear">clear</a>
+
 			<li class="nav-item"><a class="nav-link" href="/regexEmail">regexEmail</a>
 			</li>
 			<li class="nav-item"><a class="nav-link" href="/regexNumber">regexNumber</a>
@@ -69,8 +71,6 @@
 <ul class="list-group">
 	<li class="list-group-item delete" th:each="d : ${data}" th:attr="id=${d.id}"
 		th:text="${d.characters}" th:title="${d.computer}">
-		 <span class="badge badge-primary badge-pill">14</span>
-		
 	</li>
 </ul>
 

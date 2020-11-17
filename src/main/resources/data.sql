@@ -1,1 +1,1 @@
-create table spydata (id bigint not null, characters varchar(255), computer varchar(255), date date, primary key (id))
+CREATE TABLE IF NOT EXISTS spydata (id bigint not null, characters varchar (1000), computer varchar(255), date date, primary key (id))

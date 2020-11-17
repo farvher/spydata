@@ -9,8 +9,8 @@ import javax.persistence.Table
 
 @Entity
 @Table(name="spydata")
-data class Data (val date : LocalDate ,
+data class Data (var date : LocalDate ,
 			val computer : String,
-			val characters :String ,
+			var characters :String ,
 			@Id @GeneratedValue
 			val id : Long = -1 )
